@@ -86,8 +86,23 @@ System.out.println(tempRow*i+tempCol);
 if(buttons.get(tempRow*i+tempCol+(BoardSize*i)).getText().equals( buttons.get(tempRow*i+tempCol).getText() )){
 count++;
 }
+if(count == prev){
+break;
+}
+}
+for(int i = 2; i <5; i++){
+prev = count;
+System.out.println(tempRow*i+tempCol+(BoardSize*i));
+System.out.println(tempRow*i+tempCol);
+if(buttons.get(tempRow*i+tempCol-(BoardSize*i)).getText().equals( buttons.get(tempRow*i+tempCol).getText() )){
+count++;
+}
+if(count == prev){
+break;
+}
+}
 
-}}
+}
 catch(ArrayIndexOutOfBoundsException e){}
 
 if (count >= 5){
